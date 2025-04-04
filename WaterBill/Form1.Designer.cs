@@ -35,6 +35,7 @@
             ManageInvoicesMenuButton = new Button();
             AddInvoiceMenuButton = new Button();
             addInvoiceUserControl = new AddInvoiceUserControl();
+            button1 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -42,6 +43,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(button1);
             panel1.Controls.Add(ExitMenuButton);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(ManageInvoicesMenuButton);
@@ -100,6 +102,15 @@
             addInvoiceUserControl.Size = new Size(606, 559);
             addInvoiceUserControl.TabIndex = 1;
             // 
+            // button1
+            // 
+            button1.Location = new Point(77, 337);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 4;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // WaterBill
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -126,5 +137,6 @@
         private Button ExitMenuButton;
         private AddInvoiceUserControl addInvoiceUserControl1;
         private AddInvoiceUserControl addInvoiceUserControl;
+        private Button button1;
     }
 }

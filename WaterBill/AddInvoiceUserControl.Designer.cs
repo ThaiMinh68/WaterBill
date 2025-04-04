@@ -176,7 +176,7 @@
             // 
             TypeOfCustomerInput.DropDownStyle = ComboBoxStyle.DropDownList;
             TypeOfCustomerInput.FormattingEnabled = true;
-            TypeOfCustomerInput.Items.AddRange(new object[] { "Household Customer", "Administrative Agency, Public Services", "Production Units", "Business Services", "" });
+            TypeOfCustomerInput.Items.AddRange(new object[] { "Household Customer", "Administrative Agency, Public Services", "Production Units", "Business Services" });
             TypeOfCustomerInput.Location = new Point(0, 284);
             TypeOfCustomerInput.Name = "TypeOfCustomerInput";
             TypeOfCustomerInput.Size = new Size(205, 28);

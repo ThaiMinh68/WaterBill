@@ -32,7 +32,7 @@ namespace WaterBill
             double total = 0;
             int amountConsumption = lastMonthNumber - thisMonthNumber;
 
-            if(customerType == " Household Customer ")
+            if(customerType == "Household Customer")
             {
                 double avgConsumptionPerPerson = amountConsumption/numberOfPeople;
                 if (avgConsumptionPerPerson <= 10)
@@ -57,17 +57,17 @@ namespace WaterBill
                 }
 
             }
-            else if (customerType == " Administrative Agency, Public Sevices ")
+            else if (customerType == "Administrative Agency, Public Services")
             {
                 price = 9955;
                 envFee = 995.5;
             }
-            else if (customerType == " Production Units ")
+            else if (customerType == "Production Units")
             {
                 price = 11615;
                 envFee = 1161.5;
             }
-            else if (customerType == " Business Services ")
+            else if (customerType == "Business Services")
             {
                 price = 22068;
                 envFee = 2206.8;

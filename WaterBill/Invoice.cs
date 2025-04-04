@@ -26,7 +26,7 @@ namespace WaterBill
         {
             this.customerId = string.Empty;
             this.customerName = string.Empty;
-            this.invoiceId = 0;
+            this.invoiceId = string.Empty;
             this.createdAt = DateTime.Now;
             this.thisMonthNumber = 0;
             this.lastMonthNumber = 0;
