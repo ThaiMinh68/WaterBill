@@ -35,7 +35,7 @@
             ManageInvoicesMenuButton = new Button();
             AddInvoiceMenuButton = new Button();
             addInvoiceUserControl = new AddInvoiceUserControl();
-            button1 = new Button();
+            manageinvoicesUserControl = new ManageinvoicesUserControl();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -43,18 +43,18 @@
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
-            panel1.Controls.Add(button1);
             panel1.Controls.Add(ExitMenuButton);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(ManageInvoicesMenuButton);
             panel1.Controls.Add(AddInvoiceMenuButton);
             panel1.Location = new Point(0, 1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(207, 560);
+            panel1.Size = new Size(212, 560);
             panel1.TabIndex = 0;
             // 
             // ExitMenuButton
             // 
+            ExitMenuButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             ExitMenuButton.Location = new Point(0, 499);
             ExitMenuButton.Name = "ExitMenuButton";
             ExitMenuButton.Size = new Size(207, 61);
@@ -71,22 +71,24 @@
             pictureBox1.Dock = DockStyle.Top;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(207, 119);
+            pictureBox1.Size = new Size(212, 119);
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             // 
             // ManageInvoicesMenuButton
             // 
+            ManageInvoicesMenuButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             ManageInvoicesMenuButton.Location = new Point(0, 209);
             ManageInvoicesMenuButton.Name = "ManageInvoicesMenuButton";
             ManageInvoicesMenuButton.Size = new Size(207, 61);
             ManageInvoicesMenuButton.TabIndex = 1;
             ManageInvoicesMenuButton.Text = "Manage Invoices";
             ManageInvoicesMenuButton.UseVisualStyleBackColor = true;
+            ManageInvoicesMenuButton.Click += ManageInvoicesMenuButton_Click;
             // 
             // AddInvoiceMenuButton
             // 
-            AddInvoiceMenuButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            AddInvoiceMenuButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             AddInvoiceMenuButton.Location = new Point(0, 142);
             AddInvoiceMenuButton.Name = "AddInvoiceMenuButton";
             AddInvoiceMenuButton.Size = new Size(207, 61);
@@ -102,14 +104,12 @@
             addInvoiceUserControl.Size = new Size(606, 559);
             addInvoiceUserControl.TabIndex = 1;
             // 
-            // button1
+            // manageinvoicesUserControl
             // 
-            button1.Location = new Point(77, 337);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 4;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            manageinvoicesUserControl.Location = new Point(213, 83);
+            manageinvoicesUserControl.Name = "manageinvoicesUserControl";
+            manageinvoicesUserControl.Size = new Size(930, 468);
+            manageinvoicesUserControl.TabIndex = 2;
             // 
             // WaterBill
             // 
@@ -117,7 +117,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveBorder;
             BackgroundImageLayout = ImageLayout.Zoom;
-            ClientSize = new Size(817, 563);
+            ClientSize = new Size(1142, 563);
+            Controls.Add(manageinvoicesUserControl);
             Controls.Add(addInvoiceUserControl);
             Controls.Add(panel1);
             Name = "WaterBill";
@@ -137,6 +138,6 @@
         private Button ExitMenuButton;
         private AddInvoiceUserControl addInvoiceUserControl1;
         private AddInvoiceUserControl addInvoiceUserControl;
-        private Button button1;
+        private ManageinvoicesUserControl manageinvoicesUserControl;
     }
 }

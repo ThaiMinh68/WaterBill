@@ -12,6 +12,7 @@ namespace WaterBill
 {
     public partial class AddInvoiceUserControl : UserControl
     {
+        public ManageInvoices ListInvoices;
         public AddInvoiceUserControl()
         {
             InitializeComponent();
@@ -19,6 +20,15 @@ namespace WaterBill
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(CustomerIDInput.Text) ||
+       string.IsNullOrWhiteSpace(CustomerNameInput.Text) ||
+       string.IsNullOrWhiteSpace(ThisMonthInput.Text) ||
+       string.IsNullOrWhiteSpace(LastMonthInput.Text))
+            {
+                MessageBox.Show("Please fill in all required fields: Customer ID, Customer Name, This Month, and Last Month.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             string customerID = CustomerIDInput.Text;
             string customerName = CustomerNameInput.Text;
             int thisMonthNumber = Convert.ToInt32(ThisMonthInput.Text);
@@ -30,9 +40,23 @@ namespace WaterBill
             double envFee = 0;
             double subtotal = 0;
             double total = 0;
-            int amountConsumption = lastMonthNumber - thisMonthNumber;
+            int amountConsumption = thisMonthNumber - lastMonthNumber;
 
-            if(customerType == "Household Customer")
+            if (!int.TryParse(ThisMonthInput.Text, out thisMonthNumber) ||
+        !int.TryParse(LastMonthInput.Text, out lastMonthNumber))
+            {
+                MessageBox.Show("Invalid number format for This Month or Last Month.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (thisMonthNumber < lastMonthNumber)
+            {
+                MessageBox.Show("This Month's reading cannot be less than Last Month's reading.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            if (customerType == "Household Customer")
             {
                 double avgConsumptionPerPerson = amountConsumption/numberOfPeople;
                 if (avgConsumptionPerPerson <= 10)
@@ -94,6 +118,9 @@ namespace WaterBill
                 amountConsumption,
                 price,envFee,VATFee,subtotal,total
                 );
+
+            ListInvoices.AddInvoice( invoice );
+
             resultSubtotal.Text = Math.Round(subtotal,2).ToString();
             resultEnvFee.Text = Math.Round(envFee,2).ToString();
             resultVATFee.Text = Math.Round(VATFee,2).ToString();
